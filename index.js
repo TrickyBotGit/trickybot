@@ -49,7 +49,7 @@ bot.on("message", async message => {
                 { filter: 'audioonly' }));
             setTimeout(function () {
                 message.guild.voiceConnection.disconnect();
-            }, 8000);
+            }, 5000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
@@ -63,7 +63,7 @@ bot.on("message", async message => {
                 { filter: 'audioonly' }));
             setTimeout(function () {
                 message.guild.voiceConnection.disconnect();
-            }, 8000);
+            }, 5000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
@@ -77,7 +77,7 @@ bot.on("message", async message => {
                 { filter: 'audioonly' }));
             setTimeout(function () {
                 message.guild.voiceConnection.disconnect();
-            }, 8000);
+            }, 5000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
