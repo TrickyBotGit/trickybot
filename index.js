@@ -24,7 +24,7 @@ bot.on("message", async message => {
     if(cmd == `${botconfig.prefix}commands`) {
         let botembed = new Discord.RichEmbed()
         .setTitle("Commands")
-        .setDescription("!choose \n !boat \n !heyapple \n !knife \n !creator")
+        .setDescription("!choose \n !boat \n !heyapple \n !knife \n !leave \n !creator")
         .setThumbnail(bot.user.displayAvatarURL)
 
         return message.channel.send(botembed);
@@ -47,10 +47,6 @@ bot.on("message", async message => {
             connection.playStream(ytdl(
                 'https://www.youtube.com/watch?v=xcnsgtEiUWQ&feature=youtu.be',
                 { filter: 'audioonly' }));
-            
-            setTimeout(function () {
-                message.channel.send('Lemme drive da boat!');
-            }, 1000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
@@ -62,10 +58,6 @@ bot.on("message", async message => {
             connection.playStream(ytdl(
                 'https://www.youtube.com/watch?v=zyNSJb-k8Kc&feature=youtu.be',
                 { filter: 'audioonly' }));
-            
-            setTimeout(function () {
-                message.channel.send('Knife!');
-            }, 1000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
@@ -77,10 +69,6 @@ bot.on("message", async message => {
             connection.playStream(ytdl(
                 'https://www.youtube.com/watch?v=xtVC_YQq5Do&feature=youtu.be',
                 { filter: 'audioonly' }));
-            
-            setTimeout(function () {
-                message.channel.send('Hey Apple!');
-            }, 5000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
@@ -94,5 +82,11 @@ bot.on("message", async message => {
         } else {
             return message.channel.send(args[1] + " is it!");
         }
+    }
+
+    if(cmd == `${botconfig.prefix}leave`) {
+        if(!message.member.voiceChannel) {
+            message.guild.voiceConnection.disconnect();
+        } 
     }
 });
