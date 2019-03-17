@@ -51,10 +51,6 @@ bot.on("message", async message => {
             setTimeout(function () {
                 message.channel.send('Lemme drive da boat!');
             }, 1000);
-
-            setTimeout(function () {
-                message.guild.voiceConnection.disconnect();
-            }, 8000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
@@ -70,10 +66,6 @@ bot.on("message", async message => {
             setTimeout(function () {
                 message.channel.send('Knife!');
             }, 1000);
-
-            setTimeout(function () {
-                message.guild.voiceConnection.disconnect();
-            }, 8000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
@@ -89,10 +81,6 @@ bot.on("message", async message => {
             setTimeout(function () {
                 message.channel.send('Hey Apple!');
             }, 5000);
-
-            setTimeout(function () {
-                message.guild.voiceConnection.disconnect();
-            }, 8000);
         } else {
             message.channel.send('You need to be in a channel to use this command!');
         }
